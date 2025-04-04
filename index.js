@@ -34,4 +34,9 @@ const Potion = mongoose.model("Potion", potionSchema, "Potions")
 // e.g. /update/polyjuice will update the color of the polyjuice potion to pearly white
 // e.g. /update/amortentia will update the color of the Amortentia potion to golden purple
 
+const updatedPotion = await Potion.findOneAndUpdate(
+  { label },
+  { color: newColor },
+  { new: true }
+);
 
